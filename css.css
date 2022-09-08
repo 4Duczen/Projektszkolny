@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+*{
+    transition: color 200ms ease-in-out, ;
+}
+
+
 body {
     display: grid;
     grid-template-columns: 150px 1fr 150px;
@@ -8,14 +13,14 @@ body {
     min-height: 100vh;
     gap: 10px;
     background-color: var(--bg);
-    color: var(--accent);
+    color: var(--font);
     font-family: 'Noto Sans KR', sans-serif;
 }
 html.light{
     --bg: white;
     --bg2: rgb(212, 212, 212);
-    --accent: black;
-
+    --accent: rgb(230, 224, 224);
+    --font:black;
 }
 
 
@@ -31,7 +36,7 @@ align-items: center;
 }
 
 .nav-item:hover, .side-nav-item:hover{
-    background-color: rgb(105, 84, 46);
+    background-color: var(--accent);
     
 }
 .nav-item, .side-nav-item{
@@ -94,8 +99,9 @@ nav > ul {
    --padding: 10px;
    --bg: rgb(69, 67, 67);
    --fg: salmon;
-   --accent: rgb(255, 255, 255);
+   --accent: rgb(157, 155, 155);
    --bg2: rgb(44, 43, 46);
+   --font: white;
 }
 
 #theme-swap{
