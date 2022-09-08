@@ -1,18 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
 body {
     display: grid;
     grid-template-columns: 150px 1fr 150px;
     grid-template-rows: 40px 1fr  50px;
     margin: 0;
-    background-color: pink;
+    background-color: blueviolet;
     min-height: 100vh;
-    gap:var(--padding);
+    gap: 10px;
+    background-color: var(--bg);
+    color: var(--accent);
+    font-family: 'Noto Sans Korean' sans-serif;
 }
 
-#nav-list {
+.nav-list {
 display: flex;
 gap:10px;
 height: 100%;
 align-items: center;
+
+
+}
+
+.nav-item:hover, .side-nav-item:hover{
+    background-color: rgb(105, 84, 46);
+    
+}
+.nav-item, .side-nav-item{
+    align-items: center;
+    display: flex;
+    padding: calc( var(--padding)    ) ;
+    margin: 10px;
+    transition: background-color 200ms ease-in-out;
+    
 
 }
 nav > ul {
@@ -20,24 +40,29 @@ nav > ul {
     padding: 0;
     margin: 0;
 }
-
+.panel{
+    background-color: var(--bg2);
+}
 
 #nav {
     grid-row: 1;
     grid-column: 1 / 3;
-    background-color: red;
+    background: rgb(40, 36, 37);
 }
-
-
-    #side-nav {
+.nav-item{
+    background-color: rgb(53, 57, 62);
+}
+ .side-nav-item {
    grid-row: 2;
    grid-column: 3;
+   background-color: rgb(48, 51, 52);
+   
    
    }
 #content {
     grid-row: 2;
     grid-column: 2;
-    background-color: blue;
+    background-color: rgb(69, 61, 48);
 
 }
 
@@ -45,16 +70,23 @@ nav > ul {
 
  grid-row: 3;
  grid-column: 1 / 4;
- background-color: green;
+ background-color: rgb(32, 36, 36);
  display: flex;
  padding: 10px;
  justify-content: space-evenly;
 }
 
-@media screen {
+@media screen and (max-width:500px) {
+    padding: var(--padding);
     max-width: 960px;    
 }
 :root{
-   --padding: padding: 10px;
-   
+   --padding: 10px;
+   --bg: rgb(69, 67, 67);
+   --fg: salmon;
+   --accent: rgb(255, 255, 255);
+   --bg2: rgb(77, 35, 168);
 }
+
+
+
