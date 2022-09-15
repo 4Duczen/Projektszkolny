@@ -55,5 +55,6 @@ function validateEmail(email){
 }
 
 function highlightInput(input){
-    input.classList.add('error');
+    input.classList.add('error')
+
 }
