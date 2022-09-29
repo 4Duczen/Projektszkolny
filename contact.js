@@ -1,4 +1,5 @@
 const form = document.getElementById('form');
+const errorContainer = document.getElementById('errors');
 
 let errors =  [];
 
@@ -36,6 +37,10 @@ form.addEventListener('submit', (event) => {
     }
 
         console.log(errors);
+    for (const e of errors ){
+        
+        errorContainer.innerText += e;
+    }
 
     // form.submit();
 });
@@ -52,6 +57,39 @@ function validateEmail(email){
     }
 
     return isValid;
+}
+
+function validateName(name){
+    const isNotEmpty = name.length > 0;
+    const isCapitalized = /[A-Z][a-zA-Z\-]+/.test(name);
+    isValid = isCapitalized && isNotEmpty;
+}
+    
+
+return isValid;
+
+
+function validateBody(body){
+    const isNotEmpty = body.length > 0 ;
+    
+    const isMinLength = body.length > 50; 
+    const isMaxLength = body.length < 500;
+
+    isValid = isNotEmpty && isMinLength && isMaxLength;
+
+    if(!isValid){
+        errors.push('BODYwrong');
+    }
+
+    return isValid;
+}
+
+function validateAgreement(agreement){
+    if(!agreement){
+        errors.push('AGREE THIS U ///');
+    }
+
+    return agreement;
 }
 
 function highlightInput(input){
