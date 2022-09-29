@@ -46,4 +46,5 @@
 
 .input.error{
     background-color: red;
+    outline: 2px red
 }
